@@ -18,6 +18,7 @@ import android.view.View.OnLongClickListener;
 
 import com.parse.Parse;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -154,6 +155,7 @@ public class MainGameActiviti extends Activity {
         ParseObject testObject = new ParseObject("GameScore");
         testObject.put("score", questionNumber);
         testObject.put("time", timeString);
+        testObject.put("userName", ParseUser.getCurrentUser().getUsername());
         testObject.saveInBackground();
 
     }

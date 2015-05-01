@@ -58,7 +58,7 @@ public class ResultActivity extends ActionBarActivity {
                     results = new String[scoreList.size()];
                     int i=0;
                     for(ParseObject obj : scoreList){
-                        results[i]=Integer.toString(obj.getInt("score"));
+                        results[i]=Integer.toString(obj.getInt("score")) + ",  " + obj.getString("userName")+ " : " + obj.getString("time") ;
                         Log.d("score:",i+": "+ results[i]);
                         i++;
                     }
