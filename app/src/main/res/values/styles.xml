@@ -5,4 +5,15 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="FirstStyle" parent="AppTheme">
+        <item name="android:background">#ff1b0b00</item>
+        <item name="android:textColor">#ffcff0ff</item>
+        <item name="android:buttonStyle">@style/CustomButton</item>
+    </style>
+    
+    <style name="CustomButton" parent="android:Widget.Holo.Light.Button">
+        <item name="android:textColor">#ffffa714</item>
+        <item name="android:background">@drawable/button</item>
+    </style>
+
 </resources>
