@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dota 2 Quiz</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_game_activiti">MainGameActiviti</string>
+    <string name="title_activity_result">ResultActivity</string>
+</resources>
