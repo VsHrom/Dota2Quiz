@@ -58,12 +58,12 @@ public class MainGameActiviti extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_game_activiti);
-        questions = new String[33];
-        answers1 = new String[33];
-        answers2 = new String[33];
-        answers3 = new String[33];
-        answers4 = new String[33];
-        correctAnswer = new Integer[33];
+        questions = new String[34];
+        answers1 = new String[34];
+        answers2 = new String[34];
+        answers3 = new String[34];
+        answers4 = new String[34];
+        correctAnswer = new Integer[34];
 
 
         questionTextView = (TextView)findViewById(R.id.textView);
@@ -141,16 +141,12 @@ public class MainGameActiviti extends Activity {
         chron.stop();
         CharSequence time = chron.getText();
         timeString = time.toString();
-        MyApp globalResultArray = ((MyApp)getApplicationContext());
-        globalResultArray.addResult(String.valueOf(questionNumber)+"     time : "+timeString);
-
         shareScoreOnline();
 
 
 
     }
     public void shareScoreOnline(){
-        //Parse.initialize(this, "wolbalreiikv1h8YL6YXMp499NJXJ0KWbyfJyHXC", "isXyyLsY3t3DEq9m6oDMZ807GWL79SnY2MyJ1kRi");
 
         ParseObject testObject = new ParseObject("GameScore");
         testObject.put("score", questionNumber);
@@ -170,10 +166,7 @@ public class MainGameActiviti extends Activity {
         numberTextView.setVisibility(View.INVISIBLE);
         chron.stop();
         CharSequence time = chron.getText();
-        String timeString = time.toString();
-        MyApp globalResultArray = ((MyApp)getApplicationContext());
-        globalResultArray.addResult(String.valueOf(questionNumber)+"     time : "+timeString);
-
+        timeString = time.toString();
         shareScoreOnline();
 
 
@@ -204,13 +197,7 @@ public class MainGameActiviti extends Activity {
             InputStreamReader istream = new InputStreamReader(assetManager.open("Question.txt"));
             BufferedReader in = new BufferedReader(istream);
             String word;
-            //int i=0;
-            /*while ((word = in.readLine()) != null) {
-                questions[i]=word;
-                Log.d("MY",questions[i]);
-                i++;
 
-            }*/
             int n;
 
             word=in.readLine();
