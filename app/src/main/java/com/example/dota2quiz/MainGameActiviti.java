@@ -54,6 +54,14 @@ public class MainGameActiviti extends Activity {
     private static int questionCount;
     private int randomQuestion [];
     //Aplication
+    //buttons
+    int buttonIds [];
+
+    public MainGameActiviti() {
+        buttonIds = new int[]{R.id.button, R.id.button2, R.id.button3, R.id.button4};
+    }
+
+    //buttons
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,10 +76,10 @@ public class MainGameActiviti extends Activity {
 
         questionTextView = (TextView)findViewById(R.id.textView);
         numberTextView = (TextView)findViewById(R.id.textView2);
-        answer1 = (Button)findViewById(R.id.button);
-        answer2 = (Button)findViewById(R.id.button2);
-        answer3 = (Button)findViewById(R.id.button3);
-        answer4 = (Button)findViewById(R.id.button4);
+
+
+
+
 
         chron = (Chronometer)findViewById(R.id.chronometer);
         chron.start();
@@ -94,7 +102,7 @@ public class MainGameActiviti extends Activity {
     }
     public void onClick(View view)
     {
-       switch (view.getId()){
+       /*switch (view.getId()){
            case R.id.button:
                Log.d("MY","Нажата кнопка 1");
                    if (correctAnswer[randomQuestion[questionNumber]] == 1) {
@@ -127,7 +135,32 @@ public class MainGameActiviti extends Activity {
                else
                    youLose();
                break;
-       }
+       }*/
+        if(view.getId()==buttonIds[0]){
+            if (correctAnswer[randomQuestion[questionNumber]] == 1) {
+                setQuestion();
+            }
+            else
+                youLose();
+        }else if(view.getId()==buttonIds[1]){
+            if (correctAnswer[randomQuestion[questionNumber]] == 2) {
+                setQuestion();
+            }
+            else
+                youLose();
+        }else if(view.getId()==buttonIds[2]){
+            if (correctAnswer[randomQuestion[questionNumber]] == 3) {
+                setQuestion();
+            }
+            else
+                youLose();
+        }else if(view.getId()==buttonIds[3]){
+            if (correctAnswer[randomQuestion[questionNumber]] == 4) {
+                setQuestion();
+            }
+            else
+                youLose();
+        }
     }
     public void youLose()
     {
@@ -181,6 +214,11 @@ public class MainGameActiviti extends Activity {
             youWin();
             return;
         }
+        shuffleArray(buttonIds);
+        answer1 = (Button)findViewById(buttonIds[0]);
+        answer2 = (Button)findViewById(buttonIds[1]);
+        answer3 = (Button)findViewById(buttonIds[2]);
+        answer4 = (Button)findViewById(buttonIds[3]);
 
         questionTextView.setText(questions[randomQuestion[questionNumber]]);
         numberTextView.setText(Integer.toString(questionNumber+1));
